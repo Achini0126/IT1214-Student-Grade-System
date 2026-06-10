@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // sample students (Commit 3 feature)
+        // sample students
         students.add(new Student("S01", "John", 75));
         students.add(new Student("S02", "Ann", 85));
 
@@ -31,6 +31,7 @@ public class Main {
 
         for (Student s : students) {
             if (s.getId().equals(id)) {
+                System.out.println("Found:");
                 s.displayStudent();
                 return;
             }
@@ -42,6 +43,11 @@ public class Main {
     // calculate average marks
     static void calculateAverage() {
         System.out.println("\n--- Average Marks ---");
+
+        if (students.isEmpty()) {
+            System.out.println("No students available");
+            return;
+        }
 
         double total = 0;
 
